@@ -46,7 +46,6 @@ spec:
   ports:
   - name: registry-port
     port: 8081
-    protocol: TCP
   selector:
     name: schema-registry-service
 ---
@@ -149,7 +148,7 @@ spec:
         - name: SCHEMA_REGISTRY_HOST_NAME
           value: "schema-registry-service"
         - name: SCHEMA_REGISTRY_LISTENERS
-          value: "http://schema-registry-service:8081"
+          value: "http://0.0.0.0:8081"
         - name: SCHEMA_REGISTRY_DEBUG
           value: "true"
         name: schema-registry-service
